@@ -36,8 +36,9 @@ CREATE TABLE dept_emp (
 );
 
 CREATE TABLE dept_manager (
-	dept_no		varchar(10) PRIMARY KEY,
+	dept_no		varchar(10),
 	emp_no		integer,
+	PRIMARY KEY(emp_no,dept_no),
 	CONSTRAINT fk_emp
 		FOREIGN KEY(emp_no)
 			REFERENCES employees(emp_no),
