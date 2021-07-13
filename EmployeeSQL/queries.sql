@@ -10,7 +10,9 @@ select first_name,last_name,hire_date
 	where hire_date between '1986-01-01' and '1986-12-31';
 
 --3. List the manager of each department with the following information: department number, department name, the manager's employee number, last name, first name.
-
+select d.dept_no, d.dept_name, e.emp_no,e.last_name,e.first_name
+	from employees e, departments d, dept_manager dm
+	where e.emp_no = dm.emp_no and dm.dept_no = d.dept_no;
 --4. List the department of each employee with the following information: employee number, last name, first name, and department name.
 
 --5. List first name, last name, and sex for employees whose first name is "Hercules" and last names begin with "B."
